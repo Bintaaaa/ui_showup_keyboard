@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="MECHANICAL\nKEYBOARD"
+                android:text="@string/mechanical_nkeyboard"
                 android:textColor="@color/blue"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -30,6 +30,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/btn_about"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">submission-android-pemula</string>
     <string name="price">$60/Month</string>
+    <string name="mechanical_nkeyboard">MECHANICAL\nKEYBOARD</string>
+    <string name="software_engineer">Software Engineer</string>
+    <string name="bogor_indonesia">Bogor, Indonesia</string>
+    <string name="desc">Hallo perkenalkan nama saya Mohammad Bijantium Sinatria. Saya mahasiswa Universitas Singaperbangsa Karawang yang sedang menempuh Studi Independen di Dicoding Indonesia.</string>
 </resources>

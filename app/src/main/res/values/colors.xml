@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#466777</color>
     <color name="grey">#5D5D5D</color>
+    <color name="biru">#A6C1CF</color>
+    <color name="button">#466777</color>
 </resources>

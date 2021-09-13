@@ -1,7 +1,9 @@
 package com.example.submission_android_pemula.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.submission_android_pemula.R
@@ -16,18 +18,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val btnAbout: View = findViewById(R.id.btn_about)
+        btnAbout.setOnClickListener{
+            intent = Intent(this@MainActivity,About::class.java)
+            startActivity(intent)
+        }
+
+
         rvKeyboard = findViewById(R.id.rv_keyboard)
         rvKeyboard.setHasFixedSize(true)
 
         list.addAll(KeyboardData.listData)
-
         showRecycleView()
-
     }
+
 
     private fun showRecycleView(){
         rvKeyboard.layoutManager = LinearLayoutManager(this)
         val listKeyboardAdapter = KeyboardAdapter(list)
         rvKeyboard.adapter = listKeyboardAdapter
     }
+
+
 }

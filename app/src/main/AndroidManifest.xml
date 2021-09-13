@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Submissionandroidpemula">
         <activity
+            android:name=".activity.SplashScreen"
+            android:exported="true" />
+        <activity
+            android:name=".activity.About"
+            android:exported="true" />
+        <activity
             android:name=".activity.DetailKeyboard"
             android:exported="true" />
         <activity
