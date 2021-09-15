@@ -44,9 +44,7 @@ object KeyboardData {
     )
 
     private val keyboardDetail = arrayOf(
-        """Keychron K1. Keytron K1. Mechanical Keyboard. Type On An Ultra-slim Wireless Mechanical Keyboard.
-           With self-contained switches for easier typing in that Magic Keyboard style.
-           and the tactile feel of mechanical keyboard with a minimalist design. Increased Typing Productivity.
+        """Keychron K1. Keytron K1. Mechanical Keyboard. Type On An Ultra-slim Wireless Mechanical Keyboard. With self-contained switches for easier typing in that Magic Keyboard style. and the tactile feel of mechanical keyboard with a minimalist design. Increased Typing Productivity.
         """.trimIndent(),
         """
           Full keyboard adjustment: Modular mechanical keyboard design allows you to change switches and pads quickly and easily,

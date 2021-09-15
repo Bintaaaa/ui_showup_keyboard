@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.submission_android_pemula.KeyboardListener
 import com.example.submission_android_pemula.R
 import com.example.submission_android_pemula.adapter.KeyboardAdapter
 import com.example.submission_android_pemula.data.Keyboard
@@ -13,6 +14,7 @@ import com.example.submission_android_pemula.model.KeyboardData
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvKeyboard: RecyclerView
+    private lateinit var keyboardAdapter: KeyboardAdapter
     private var list: ArrayList<Keyboard> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +37,24 @@ class MainActivity : AppCompatActivity() {
 
     private fun showRecycleView(){
         rvKeyboard.layoutManager = LinearLayoutManager(this)
-        val listKeyboardAdapter = KeyboardAdapter(list)
-        rvKeyboard.adapter = listKeyboardAdapter
+        keyboardAdapter = KeyboardAdapter(list)
+        rvKeyboard.adapter = keyboardAdapter
+
+        keyboardAdapter.setItem(object : KeyboardListener {
+            override fun onItemClick(keyboard: Keyboard) {
+                val detailIntent = Intent(this@MainActivity, DetailKeyboard::class.java)
+
+                detailIntent.putExtra(DetailKeyboard.EXTRA_TITLE, keyboard.title)
+                detailIntent.putExtra(DetailKeyboard.EXTRA_PRICE, keyboard.price)
+                detailIntent.putExtra(DetailKeyboard.EXTRA_COMPANY, keyboard.company)
+                detailIntent.putExtra(DetailKeyboard.EXTRA_DETAIL, keyboard.detail)
+                detailIntent.putExtra(DetailKeyboard.EXTRA_IMAGE, keyboard.image)
+
+                startActivity(detailIntent)
+            }
+        })
+
+
     }
 
 

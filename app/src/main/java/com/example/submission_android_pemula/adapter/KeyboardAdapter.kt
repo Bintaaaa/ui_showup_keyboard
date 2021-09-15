@@ -1,18 +1,24 @@
 package com.example.submission_android_pemula.adapter
 
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.submission_android_pemula.KeyboardListener
 import com.example.submission_android_pemula.R
 import com.example.submission_android_pemula.data.Keyboard
 import com.example.submission_android_pemula.model.KeyboardData
 
 class KeyboardAdapter(private var list: ArrayList<Keyboard>): RecyclerView.Adapter<KeyboardAdapter.KeyboardViewHolder>() {
+
+    private lateinit var onClickItem: KeyboardListener
+
     inner class KeyboardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvTitle: TextView = itemView.findViewById(R.id.tv_title)
         val ivImage: ImageView = itemView.findViewById(R.id.iv_keyboard)
@@ -27,7 +33,10 @@ class KeyboardAdapter(private var list: ArrayList<Keyboard>): RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: KeyboardViewHolder, position: Int) {
         val keyboard = list[position]
-
+        holder.itemView.setOnClickListener {
+            Toast.makeText(holder.itemView.context, "Kamu memilih " + list[position].title, Toast.LENGTH_SHORT).show()
+            onClickItem.onItemClick(keyboard)
+        }
         holder.tvTitle.text = keyboard.title
         holder.tvPrice.text = keyboard.price
         holder.tvCompany.text = keyboard.company
@@ -36,9 +45,14 @@ class KeyboardAdapter(private var list: ArrayList<Keyboard>): RecyclerView.Adapt
             .load(keyboard.image)
             .apply(RequestOptions().override(132,102))
             .into(holder.ivImage)
+
     }
 
     override fun getItemCount(): Int {
         return list.size
+    }
+
+    fun setItem(onClickItem: KeyboardListener){
+        this.onClickItem = onClickItem
     }
 }
