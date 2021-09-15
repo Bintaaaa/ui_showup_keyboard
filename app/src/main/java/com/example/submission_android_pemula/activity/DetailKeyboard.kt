@@ -1,5 +1,6 @@
 package com.example.submission_android_pemula.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -26,6 +27,7 @@ class DetailKeyboard : AppCompatActivity() {
 
         btnBack()
 
+        btnShared()
 
     }
     private fun getDetailKeyboard(){
@@ -58,6 +60,18 @@ class DetailKeyboard : AppCompatActivity() {
         val btnBack: ImageButton = findViewById(R.id.btn_back)
         btnBack.setOnClickListener {
             onBackPressed()
+        }
+    }
+
+    private fun btnShared(){
+        val btnShared: ImageButton = findViewById(R.id.btn_shared)
+        val title = intent.getStringExtra(EXTRA_TITLE)
+        btnShared.setOnClickListener {
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT, " $title is recomended for you, get this key in your favorite market place")
+            intent.type="text/plain"
+            startActivity(intent)
         }
     }
 }
