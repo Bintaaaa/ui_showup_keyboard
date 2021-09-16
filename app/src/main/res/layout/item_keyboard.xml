@@ -65,6 +65,13 @@
                 android:textSize="16dp"
                 android:text="PT Syncronous Indonesia" />
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/black"
+            android:layout_margin="8dp"
+            />
+
     </LinearLayout>
 
 
